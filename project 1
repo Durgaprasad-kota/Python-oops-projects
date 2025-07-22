@@ -1,0 +1,54 @@
+class Patient:
+    def __init__(self,name,age,diesease,patient_no,report):
+            self.__name=name
+            self.__report=report
+            self.__diesease=diesease
+            self._patient_no=patient_no
+            if age >0:
+                self.__age=age
+            else:
+                raise ValueError(" AGE MUST BE GREATER THAN '0'...❕❕❕")          
+            
+
+    def Update_diesease(self,role,diesease_name):
+        if role == 'doctor':
+            self.__diesease=diesease_name
+            print(f" Dieseases was updated for patient {self.__name} and his diesease is {self.__diesease}")
+        else:
+            raise ValueError("ONLY HIGHER OFFICIAL CAN UPDATE DIESEASE 🧑‍⚕️😷")
+    def get_report(self,pin):
+        if pin==self._patient_no:
+            print(f" patient {self.__name} and his age {self.__age} condition was {self.__report} 👍🏻")
+        else:
+            raise ValueError("🚫 STRANGERS NOT ALLOWED TO SEE PATIENT REPORTS 🚫")
+    def Log_out(self):
+        print("THANK YOU FOR VISITING OUR HOSPITAL,HAVE A GOOD DAY 😊💕")
+user=str(input("Enter patient name :"))
+pin=int(input(f"Enter {user} pin :"))
+user=user.lower()
+patients={
+    'vijay':Patient('viay',18,'sugar',1001,"avj"),
+    'varun':Patient('varun',17,'TB',1002,'worst'),
+    'pavan':Patient('pavan',18,'pennis not responding',1003,'below worst'),
+    'sudheer':Patient('sudheer',17,'sperm count decresed',1004,'almost comes to die')
+}
+try:
+    while 1:
+        if user in patients: 
+            pat=patients[user]
+            print("1.Get_Report 📃\n2.Update_Dieseases 🤢\n3.Log_Out 📤")
+            choice=int(input("Enter your choice :"))
+            if choice ==1:
+                pat.get_report(pin)
+            elif choice ==2:
+                role=str(input("Enter your role :"))
+                diesease=str(input(f"Enter {user} present dieseases :"))
+                pat.Update_diesease(role,diesease)
+            else:
+                pat.Log_out()
+                break
+        else:
+            print(f"Sorry {user} was recorded in my list")
+            break
+except ValueError as a:
+    print("🙇🏻 SORRY,",a)
