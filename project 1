@@ -29,8 +29,8 @@ user=user.lower()
 patients={
     'vijay':Patient('viay',18,'sugar',1001,"avj"),
     'varun':Patient('varun',17,'TB',1002,'worst'),
-    'pavan':Patient('pavan',18'liver not responding',1003,'below worst'),
-    'sudheer':Patient('sudheer',17'white blood count decresed',1004,'critical condition')
+    'pavan':Patient('pavan',18',liver not responding',1003,'below worst'),
+    'sudheer':Patient('sudheer',17',white blood count decresed',1004,'critical condition')
 }
 try:
     while 1:
