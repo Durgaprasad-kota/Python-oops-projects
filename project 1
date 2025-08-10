@@ -15,7 +15,7 @@ class Patient:
             self.__diesease=diesease_name
             print(f" Dieseases was updated for patient {self.__name} and his diesease is {self.__diesease}")
         else:
-            raise ValueError("ONLY HIGHER OFFICIAL CAN UPDATE DIESEASE 🧑‍⚕️😷")
+            raise ValueError("ONLY  HIGHER OFFICIAL CAN UPDATE DIESEASE 🧑‍⚕️😷")
     def get_report(self,pin):
         if pin==self._patient_no:
             print(f" patient {self.__name} and his age {self.__age} condition was {self.__report} 👍🏻")
